@@ -1,0 +1,33 @@
+Fichier recenssant les points a traiter sur l'application popote
+
+- Listes des tables en base :
+    - categorie
+    - commentaire_par_membre
+    - commentaires
+    - constituants
+    - ingredients
+    - ingredients_par_recette
+    - membres
+    - photos
+    - photos_par_recette
+    - preferees
+    - recette_par_membre
+    - recettes
+    - sous_categorie 
+
+- Suppression d'une recette :
+    Supprimer la recette de labase et toutes les references a cette recette
+    - liste des tables impactées :
+        - categorie                 => non
+        - commentaire_par_membre    => non
+        - commentaires              => oui
+        - constituants              => oui
+        - ingredients               => 
+        - ingredients_par_recette   => 
+        - membres                   => 
+        - photos                    => 
+        - photos_par_recette        => 
+        - preferees                 => 
+        - recette_par_membre        => 
+        - recettes                  => 
+        - sous_categorie            => 

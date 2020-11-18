@@ -22,30 +22,22 @@ if (isset($_POST['login'])) {
     $membre = membre::NewByLogin($new_login);
     if ($membre->login != $new_login) {
         $_SESSION['loginMessage'] = "Login inconnu";
-        header("location: /");
-        //echo "<a href=index.php>Continuer</a>";
         exit;
-    }
-    if ($membre->password != $new_password) {
+    } else if ($membre->password != $new_password) {
         //echo "<p> Password invalide</p>";
         $_SESSION['loginMessage'] = "Password Invalide";
-        header("location: /");
-        exit;
-    }
-    if ($membre->valid != '1') {
+    } else if ($membre->valid != '1') {
         $_SESSION['loginMessage'] = "Login devalidé, veuillez contacter l'administrateur";
-        header("location: /");
-        //echo "<a href=index.php>Continuer</a>";
-        exit;
+    } else {
+        $_SESSION['membre'] = serialize($membre);
+        $_SESSION['typeUser'] = $membre->type;
+        //echo "<p>Bienvenue $membre->prenom $membre->nom </p>";
+        /* if ($membre->type == "admin") {
+          echo "<p>Vous etes administrateur</p>";
+          } */
+        $_SESSION['typeContenu'] = 'recette';
+        $_SESSION['typeCommentaire'] = 'affichage';
     }
-    $_SESSION['membre'] = serialize($membre);
-    $_SESSION['typeUser'] = $membre->type;
-    //echo "<p>Bienvenue $membre->prenom $membre->nom </p>";
-    /* if ($membre->type == "admin") {
-      echo "<p>Vous etes administrateur</p>";
-      } */
-    $_SESSION['typeContenu'] = 'recette';
-    $_SESSION['typeCommentaire'] = 'affichage';
     header("location: /");
 
     //echo "<a href=index.php>Continuer</a>";
