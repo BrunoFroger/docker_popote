@@ -15,19 +15,25 @@ Fichier recenssant les points a traiter sur l'application popote
     - recettes
     - sous_categorie 
 
-- Suppression d'une recette :
-    Supprimer la recette de labase et toutes les references a cette recette
-    - liste des tables impactées :
+- validations a faire suite a la migration sur docker :
+    - envoi de mail
+    - creation d'un utilisateur
+    - creation de recette
+
+- nouvelles fonctionnalite a implementer :
+    - Suppression d'une recette :
+        Supprimer la recette de la base et toutes les references à cette recette
+        - liste des tables impactées :
         - categorie                 => non
         - commentaire_par_membre    => non
         - commentaires              => oui
         - constituants              => oui
-        - ingredients               => 
-        - ingredients_par_recette   => 
-        - membres                   => 
-        - photos                    => 
-        - photos_par_recette        => 
-        - preferees                 => 
-        - recette_par_membre        => 
-        - recettes                  => 
-        - sous_categorie            => 
+        - ingredients               => non
+        - ingredients_par_recette   => voir quel est le lien avec recette
+        - membres                   => non
+        - photos                    => oui, indirectement viatable photos_par_recette, si pas utilisée dans une autre recette
+        - photos_par_recette        => oui
+        - preferees                 => oui
+        - recette_par_membre        => oui
+        - recettes                  => oui
+        - sous_categorie            => non
