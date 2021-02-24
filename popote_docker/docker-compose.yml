@@ -49,4 +49,4 @@ services:
       - MYSQL_PASSWORD=popote&secret
     volumes:
       #- ./database/popote_vide.sql:/docker-entrypoint-initdb.d/popote.sql
-      - ./database/popote.sql:/docker-entrypoint-initdb.d/popote.sql
+      - ./database/popote_latest.sql:/docker-entrypoint-initdb.d/popote.sql

@@ -18,7 +18,10 @@ Fichier recenssant les points a traiter sur l'application popote
 - validations a faire suite a la migration sur docker :
     - envoi de mail
     - creation d'un utilisateur
+    - modification du compte utilisateur 
+        - bug : page not found quand on clique sur le bouron modification du compte
     - creation de recette
+        - bug : a la page de creation de l'intitule de la recette impossinble de creer la recette en base
 
 - nouvelles fonctionnalite a implementer :
     - Suppression d'une recette :
@@ -31,7 +34,7 @@ Fichier recenssant les points a traiter sur l'application popote
         - ingredients               => non
         - ingredients_par_recette   => voir quel est le lien avec recette
         - membres                   => non
-        - photos                    => oui, indirectement viatable photos_par_recette, si pas utilisée dans une autre recette
+        - photos                    => oui, indirectement via table photos_par_recette, si pas utilisée dans une autre recette
         - photos_par_recette        => oui
         - preferees                 => oui
         - recette_par_membre        => oui

@@ -2,7 +2,7 @@
 Creation d'un site de recettes de cuisine utilisant Docker
 
 # Structure des fichiers
-- repertoire "docker" : contient l'ensemble des fichiers nécessaires a la création des conteneurs pour créer une instance de l'application dans docker avec docker-compose
+- repertoire "popote_docker" : contient l'ensemble des fichiers nécessaires a la création des conteneurs pour créer une instance de l'application dans docker avec docker-compose
 
 - répertoire "src" : contient tous les fichiers source PHP pour générer les pages Web du site popote
 
@@ -10,17 +10,23 @@ Creation d'un site de recettes de cuisine utilisant Docker
 
 # Génération des conteneurs
 Chargez l'ensemble des fichiers de cette application sur une machine sur laquelle Docker est installé.
-Aller dans le répertoire docker de cette application et lancer la commande suivante :
+Aller dans le répertoire docker de cette application (popote_docker) et lancer la commande suivante :
 
 	docker-compose up -d --build
 	
 si tout se passe bien vous devriez avoir ces lignes a la fin de la génération de vos images docker
 
 	
-	Starting docker_database_1 ... done
-	Starting docker_php-fpm_1  ... done
-	Starting docker_nginx_1    ... done
+	Creating popote_docker_database_1 ... done
+	Creating popote_docker_php-fpm_1  ... done
+	Creating popote_docker_nginx_1    ... done
 	
+	
+Pour pousser ces containers sur dockerHub
+	
+		docker tag <id image> bfroger/<nom image>:version
+		
+ 
 # Execution de l'application
 il ne vous reste plus qu'a lancer l'application Web dans votre navigateur avec l'adresse suivante : 
 	
